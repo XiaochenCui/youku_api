@@ -1,7 +1,9 @@
-from rest_framework import routers, serializers, viewsets
-from video import models
+from rest_framework import serializers
+
+from .models import Video
 
 
 class VideoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Video
+        model = Video
+        exclude = ('id',)
